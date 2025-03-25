@@ -78,7 +78,7 @@ const outputDiv = document.getElementById("output");
 
     document.getElementById("runBtn").addEventListener("click", async () => {
       const digits = parseInt(document.getElementById("digitsInput").value);
-      outputDiv.textContent += "実行中なのだ…\n";
+      outputDiv.textContent += "実行中…\n";
       try {
         outputDiv.textContent += "パスワードの検証開始\n";
         await pyodide.runPythonAsync(`import asyncio; await run_crack("uploaded_file", ${digits})`);
