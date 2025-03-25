@@ -2,22 +2,22 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <title>Pythonパスワードクラッカー</title>
+  <title>Officeファイルパスワード解析ツール</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Pythonパスワードクラッカー</h1>
+  <h1>Officeファイルパスワード解析ツール</h1>
   <div class="container">
-    <p>対象ファイルを選択して、パスワードの桁数を入力し、「実行」ボタンを押すのだ。</p>
+    <p>対象ファイルを選択、パスワードの最大桁数を入力</p>
     <input type="file" id="fileInput">
     
     <p for="digitsInput">パスワードの桁数：</p>
     <input type="number" id="digitsInput" min="1" value="1">
     
-    <button id="runBtn" disabled>実行するのだ</button>
+    <button id="runBtn" disabled>解析開始</button>
     
-    <h3>出力なのだ</h3>
-    <div id="output">実行結果がここに表示されるのだ…</div>
+    <h3>アウトプット欄</h3>
+    <div id="output">実行結果はここに表示</div>
   </div>
 
   <!-- Pyodideの読み込み -->
