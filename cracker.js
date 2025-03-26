@@ -67,17 +67,6 @@ document.getElementById("fileInput").addEventListener("change", async (event) =>
     outputDiv.textContent += "ファイルのアップロード完了\n";
   }
 });
-document.getElementById("runBtn").addEventListener("click", async () => {
-  const digits = parseInt(document.getElementById("digitsInput").value);
-  outputDiv.textContent += "実行中…\n";
-  try {
-    outputDiv.textContent += "パスワードの検証開始\n";
-    await pyodide.runPythonAsync(`import asyncio; await run_crack("uploaded_file", ${digits})`);
-    outputDiv.textContent += "処理完了\n";
-  } catch (err) {
-    outputDiv.textContent += "エラー発生: " + err + "\n";
-  }
-});
 
 document.getElementById("runBtn").addEventListener("click", async () => {
   const digits = parseInt(document.getElementById("digitsInput").value);
