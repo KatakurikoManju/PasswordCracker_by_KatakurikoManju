@@ -6,6 +6,7 @@
   --button-bg: #007BFF;
   --button-text: #ffffff;
   --shadow-color: 0 0 15px rgba(0, 0, 0, 0.15);
+  --shadow-color-hover: 0 0 20px rgba(0, 0, 0, 0.15);
 }
 
 /* ダークモードのスタイル */
@@ -16,13 +17,14 @@
   --button-bg: #444;
   --button-text: #ffffff;
   --shadow-color: 0 0 15px rgba(255, 255, 255, 0.15);
+  --shadow-color-hover: 0 0 20px rgba(255, 255, 255, 0.15);
 }
 
 body {
   font-family: 'Arial', sans-serif;
   background-color: var(--bg-color);
   color: var(--text-color);
-  transition: background-color 0.5s, color 0.5s;
+  transition: 0.5s;
   text-align: center;
   padding: 20px;
 }
@@ -37,7 +39,9 @@ body {
   box-shadow: var(--shadow-color);
   border-radius: 15px;
   background-color: var(--box-color);
-  transition: background-color 0.5s;
+  /* transition: background-color 0.5s;
+  transition: transform 0.5s; */
+  transition: 0.5s;
 }
 
 label, p {
@@ -63,13 +67,12 @@ input {
   box-shadow: var(--shadow-color);
   background-color: var(--box-color);
   color: var(--text-color);
-  transition: width 1s, background-color 0.5s;
+  transition: 0.5s;
 }
 
 button {
   margin-top: 20px;
   background: #007BFF;
-  transition: width 1s, background-color 0.5s;
   width: 70%;
   color: white;
   border: none;
@@ -115,8 +118,13 @@ button:hover:enabled {
   overflow-y: auto;
   text-align: left;
   background-color: var(--box-color);
-  transition: width 1s, background-color 0.5s;
+  transition: 0.5s;
   color: var(--text-color);
   /* font-family: "Courier New", monospace; */
   box-shadow: var(--shadow-color);
+}
+
+#output:hover, .container:hover, #digitsInput:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-color-hover);
 }
