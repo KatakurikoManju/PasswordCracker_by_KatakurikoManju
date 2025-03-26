@@ -6,15 +6,17 @@
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Officeファイルパスワード解析ツール</h1>
+  <h1 id="toggleTheme">Officeファイルパスワード解析ツール</h1>
   <div class="container">
     <p>対象ファイルを選択、パスワードの最大桁数を入力</p>
-    <input type="file" id="fileInput">
+    <!-- <input type="file" id="fileInput"> -->
+    <input type="file" id="fileInput" style="display: none;">
+    <button class="fileInput" id="customFileButton">ファイルを選択</button>
     
     <p for="digitsInput">パスワードの桁数：</p>
     <input type="number" id="digitsInput" min="1" value="1">
-    
     <button id="runBtn" disabled>解析開始</button>
+    <div class="loader" id="loadingIcon"></div>
     
     <h3>アウトプット欄</h3>
     <div id="output">実行結果はここに表示</div>
