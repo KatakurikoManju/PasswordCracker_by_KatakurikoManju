@@ -1,12 +1,30 @@
-body {
-  font-family: 'Arial', sans-serif;
-  background-color: #f4f4f9;
-  text-align: center;
-  padding: 20px;
+/* デフォルトのライトモード */
+:root {
+  --bg-color: #f4f4f9;
+  --text-color: #333333;
+  --box-color: #ffffff;
+  --button-bg: #007BFF;
+  --button-text: #ffffff;
+  --shadow-color: 0 0 15px rgba(0, 0, 0, 0.15);
 }
 
-h1 {
-  color: #333;
+/* ダークモードのスタイル */
+.dark-mode {
+  --bg-color: #333;
+  --text-color: #ffffff;
+  --box-color: #1e1e1e;
+  --button-bg: #444;
+  --button-text: #ffffff;
+  --shadow-color: 0 0 15px rgba(255, 255, 255, 0.15);
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.5s, color 0.5s;
+  text-align: center;
+  padding: 20px;
 }
 
 .container {
@@ -16,9 +34,10 @@ h1 {
   padding-bottom: 2%;
   padding-left: 4%;
   padding-right: 4%;
-  background: white;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  box-shadow: var(--shadow-color);
   border-radius: 15px;
+  background-color: var(--box-color);
+  transition: background-color 0.5s;
 }
 
 label, p {
@@ -40,7 +59,11 @@ input, button {
 
 input {
   border: 0px;
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  width:88%;
+  box-shadow: var(--shadow-color);
+  background-color: var(--box-color);
+  color: var(--text-color);
+  transition: width 1s, background-color 0.5s;
 }
 
 button {
@@ -55,6 +78,16 @@ button {
   box-shadow: 0 0 15px #007bff;
 }
 
+.fileInput {
+  background-color: var(--box-color);
+  width: 90%;
+  color: var(--text-color);
+  border: none;
+  cursor: pointer;
+  transition: 0.5s;
+  box-shadow: var(--shadow-color);
+}
+
 button:disabled {
   background: #ccc;
   cursor: not-allowed;
@@ -67,16 +100,23 @@ button:hover:enabled {
   box-shadow: 0 0 20px #0045c4;
 }
 
+.fileInput:hover:enabled {
+  width: 80%;
+  background: var(--box-color);
+  box-shadow: var(--shadow-color);
+}
+
 #output {
   white-space: pre-wrap;
   /* background-color: #222; */
-  background-color: #fff;
-  color: #000;
   padding: 10px;
   border-radius: 10px;
   height: 300px;
   overflow-y: auto;
   text-align: left;
+  background-color: var(--box-color);
+  transition: width 1s, background-color 0.5s;
+  color: var(--text-color);
   /* font-family: "Courier New", monospace; */
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+  box-shadow: var(--shadow-color);
 }
