@@ -46,7 +46,7 @@ label, p, h3 {
   font-weight: bold;
   margin: 10px 0;
   color: var(--text-color);
-  transition: 0.5s;
+  transition: color 0.5s;
 }
 
 input, button {
